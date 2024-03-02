@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Generation MIDI Project</title>
+    <style>
+      /* Add your CSS styles here */
+    </style>
+  </head>
+  <body>
+    <h1>Music Generation MIDI Project</h1>
+    <button id="generateButton">Generate MIDI</button>
+    <br />
+    <audio controls id="audioPlayer">
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      document
+        .getElementById("generateButton")
+        .addEventListener("click", function () {
+          fetch("/random_generated_midi")
+            .then((response) => response.blob())
+            .then((blob) => {
+              const url = URL.createObjectURL(blob);
+              document.getElementById("audioPlayer").src = url;
+            });
+        });
+    </script>
+  </body>
+</html>
