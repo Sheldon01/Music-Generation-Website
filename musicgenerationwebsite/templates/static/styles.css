@@ -12,11 +12,11 @@ body {
   line-height: 1.6;
   color: #333;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: #000000;
 }
 
 h1 {
-  color: #444;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -37,4 +37,13 @@ button:hover {
 audio {
   width: 100%;
   margin-top: 20px;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
